@@ -41,6 +41,7 @@ public class App
         generateFile(fileRoot+siteName);
 
 
+
         createHtmlFile(siteName,author);
 
         if(javaScript.toLowerCase().equals("y"))
