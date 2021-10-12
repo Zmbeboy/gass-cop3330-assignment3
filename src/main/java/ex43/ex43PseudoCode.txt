@@ -11,7 +11,7 @@ function generateFile(String of the website path)
 end
 }
 
-function createHtmlFile(String of the website path, and a String of the author)
+function createHtmlFile(String of the website path, String of the website title, and a String of the author)
 {
     Create an index.html file at the end of the website path
     Create a buffered writer that can write into the .html file

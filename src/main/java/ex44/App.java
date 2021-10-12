@@ -13,12 +13,15 @@ import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
+//Products store information on a single object in the json file
 class Product
 {
+    //the information
     public String name;
     public Double price;
     public int quantity;
 
+    //get and set methods to acess the information
     public void setName(String name)
     {
         this.name = name;
@@ -45,6 +48,7 @@ class Product
     }
 }
 
+//data objects hold lists of products
 class Data
 {
     private List<Product> products;
@@ -60,10 +64,13 @@ class Data
 
 public class App
 {
+    //Returns true or false on if a string matches the name of a product
     public static boolean objectFound(String object, Data products)
     {
+        //iterates through every product
         for(int i = 0 ; i < products.getProducts().size();i++)
         {
+            //if a product is equal
             if(object.equals(products.getProducts().get(i).name))
             {
                 //print output
@@ -74,22 +81,27 @@ public class App
                 return true;
             }
         }
+        //if a product is not in the Data object
         System.out.println("Sorry, that product was not found in our inventory");
         return false;
     }
 
     public static void main( String[] args ) throws IOException
     {
+        //scanner for user input and a Gson for reading the json file
         Scanner scan  = new Scanner(System.in);
         Gson g = new Gson();
         Object obj;
         try
         {
+            //reading the json file into a Data object
             JsonParser parser = new JsonParser();
             obj = parser.parse(new FileReader("src/main/java/ex44/exercise44_input.json"));
             JsonObject jsonObject = (JsonObject) obj;
             Data products = g.fromJson(jsonObject,Data.class);
 
+            //Asks the user for an item name and checks if its in the Data Object
+            //Loops if it is not in the Data object
             boolean itemExists = false;
             while(!itemExists)
             {
