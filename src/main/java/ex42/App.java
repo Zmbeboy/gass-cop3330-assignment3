@@ -7,12 +7,15 @@ package ex42;
 import java.io.*;
 import java.util.*;
 
+//Employee class holds information about an employee and contains instructions on how to output it
 class Employee
 {
+    //information
     public String FirstName;
     public String LastName;
     public int salary;
 
+    //how to output the information
     public void printEmployees()
     {
         System.out.println(String.format("%-9s %-9s %d",LastName,FirstName,salary));
