@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Word{
+String word
+int quantity
+
+getWord()
+setWord(String word)
+getQuantity()
+setQuantity(int quantity)
+}
+
+class App{
+readFile(File file)
+printWords(List<Words> words)
+wordSort(List<Words> words)
+wordParse(String[] input)
+main()
+}
+
+App -- Word : > uses
+@enduml

@@ -1,0 +1,52 @@
+This program will read input in from a file into an array,
+Sort the array,
+Output the formatted result to an external file.
+
+function readFile(File)
+{
+    Creates an empty List of strings.
+    Creates a scanner that scans the inputted file
+
+    While the text file still has a next line
+        Add the next line as a string into the string list
+        Repeat until all lines are added into the list
+
+    Return the list of strings
+
+end
+}
+
+function sortArrayList(List of strings)
+{
+    Use the Collections.sort function from the collections class to sort the list of strings
+    Return the sorted list
+
+end
+}
+
+function printToFile(List of strings)
+{
+    Make a new output text file
+    Set the output stream to the text file instead of a console
+
+    Print out the number of names along with some formatting
+
+    For the amount of strings in the list
+        Print out each name in the list
+
+end
+}
+
+In Main
+{
+    Read in a input file
+    Create an empty list of strings
+    In a try catch loop
+        Set the empty string list equal to the readFile function with the input file as its parameter
+        Catch a file not found exception
+
+    Set the list of strings equal to the sortArrayList function with the list of strings as the input
+    In a try catch loop
+        Use the printToFile function with the sorted list of strings as the parameter
+        Catch a file not found exception
+}

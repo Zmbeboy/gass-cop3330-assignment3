@@ -1,0 +1,74 @@
+This program will read in an input file,
+Parse the comma seperated values,
+And print the result back out formatted as a table
+
+In the Employee class
+{
+    Employees will have a FirstName
+    Employees will have a LastName
+    Employees will have a Salary
+
+    Employees can use the printEmployees() function
+    {
+        prints the last name, first name, and salary in a table format
+    }
+}
+
+In the App Class
+{
+    function parseData(String of data)
+    {
+        Create a new employee
+        Create an empty temporary string
+        Create an integer equal to zero
+
+        For the length of the inputted string
+            If the character at the number of iterations index is not a comma
+                Add it to the empty temporary string
+            If the character is a comma
+                Do one of two things
+                {
+                    If this is the first time a comma is found
+                        Add the temporary string to the LastName value in the employee
+                        Reset the temporary string
+                        Increase the integer to 1 so the function knows it is not the first time a comma is seen
+                    If this is the second time a comma is found
+                         Add the temporary string to the FirstName value in the employee
+                         Reset the temporary string
+                }
+        When the length of the string is read the only remaining values in temp will be the salary of the employee
+        Set the employees salary to the Interger parse of the temp string
+        Return the employee
+    end
+    }
+
+    function readFile(File)
+    {
+        Create an empty list of Strings
+        Create a Scanner that reads the file
+
+        While there is a next line to be scanned
+            Add the next line into the list of strings
+
+        Return the list of strings
+    end
+    }
+
+    In main
+    {
+        Create a new File that has the location of the input file
+        Create an empty List of Strings
+        Create an empty List of Employees
+
+        In a try catch loop
+            Set the empty String List equal to the readFile function with the input file as its parameter
+            Catch the file not found exception
+
+        For the amount of strings in the String List
+            Use the parseData function with the each individual string as a parameter to fill up the Employees list
+
+        Print out some formatting for the table
+        For the amount of employees
+            call each employees printEmployees function
+    }
+}

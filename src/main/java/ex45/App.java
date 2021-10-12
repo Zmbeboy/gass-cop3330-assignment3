@@ -3,14 +3,11 @@
  *  Copyright 2021 Eric Gass
  */
 
-
 package ex45;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class App
@@ -23,7 +20,9 @@ public class App
         while(scan.hasNextLine())
         {
             input += scan.nextLine();
-            input += "\n";
+            if(scan.hasNextLine()) {
+                input += "\n";
+            }
         }
         return input;
     }
@@ -34,13 +33,14 @@ public class App
     }
 
     public static void createFile(String fileName, String output) throws FileNotFoundException {
-        File outfile = new File("src/main/java/ex45/"+fileName+".txt");
+        File outfile = new File(fileName+".txt");
         PrintStream stream = new PrintStream(outfile);
         System.setOut(stream);
-        System.out.println(String.format(output));
+        System.out.print(String.format(output));
     }
     public static void main( String[] args ) throws FileNotFoundException {
         Scanner scan = new Scanner(System.in);
+        String fileRoot = "src/main/java/ex45/";
         File file = new File("src/main/java/ex45/exercise45_input.txt");
         String input = "";
         String output ="";
@@ -55,6 +55,6 @@ public class App
         System.out.print("What do you want to name the output file? (do not put .txt) ");
         String fileName = scan.nextLine();
 
-       createFile(fileName,output);
+       createFile(fileRoot+fileName,output);
     }
 }

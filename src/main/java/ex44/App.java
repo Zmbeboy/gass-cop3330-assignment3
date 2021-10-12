@@ -53,14 +53,31 @@ class Data
     {
         return products;
     }
-    public void setItems(List<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 }
 
-
 public class App
 {
+    public static boolean objectFound(String object, Data products)
+    {
+        for(int i = 0 ; i < products.getProducts().size();i++)
+        {
+            if(object.equals(products.getProducts().get(i).name))
+            {
+                //print output
+                //set itemExist to true
+                System.out.println("Name: "+products.getProducts().get(i).name);
+                System.out.println(String.format("Price: %.2f",products.getProducts().get(i).price));
+                System.out.println("Quantity: "+products.getProducts().get(i).quantity);
+                return true;
+            }
+        }
+        System.out.println("Sorry, that product was not found in our inventory");
+        return false;
+    }
+
     public static void main( String[] args ) throws IOException
     {
         Scanner scan  = new Scanner(System.in);
@@ -79,26 +96,12 @@ public class App
                 System.out.print("What is the product name? ");
                 String item = scan.nextLine();
 
-               for(int i = 0 ; i < products.getProducts().size();i++)
-                {
-                    if(item.equals(products.getProducts().get(i).name))
-                    {
-                        //print output
-                        //set itemExist to true
-                        System.out.println("Name: "+products.getProducts().get(i).name);
-                        System.out.println(String.format("Price: %.2f",products.getProducts().get(i).price));
-                        System.out.println("Quantity: "+products.getProducts().get(i).quantity);
-                        System.exit(1);
-                    }
-                }
-                System.out.println("Sorry, that product was not found in our inventory");
+                itemExists = objectFound(item,products);
             }
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
-
-
     }
 }

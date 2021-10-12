@@ -1,0 +1,38 @@
+This program will get user input for the name and author of a website
+As well as prompt if a folder needs to be made for JavaScript and CSS files
+Then it generates a folder of the site name as well as a filled out .html file
+And creates the Javascript and CSS folders as needed
+
+function generateFile(String of the website path)
+{
+    Create folders along the path of the inputed String
+    Output to let the user know a folder was created and where
+
+end
+}
+
+function createHtmlFile(String of the website path, and a String of the author)
+{
+    Create an index.html file at the end of the website path
+    Create a buffered writer that can write into the .html file
+    Write, in html code, the title of website and the author into the .html file
+    Close the buffered writer
+    Print out to let the user know the file was created
+end
+}
+
+In main
+{
+    Create a string with the file path up until the name of the website
+    Create a scanner to read in user input
+    Prompt for the website name, Author, if they want a folder of JavaScript, and if they want a folder for CSS
+    Store each of the users responses in an according string
+
+    Use the generateFile function with the file path with the site name as the parameters
+    Use the createHtmlFile function with the file path with the site name and the author as the parameters
+
+    If the user wanted a javaScript folder
+        Use the generateFile function with the filepath and the js folder as the end
+    If the user wanted a CSS folder
+            Use the generateFile function with the filepath and the css folder as the end
+}

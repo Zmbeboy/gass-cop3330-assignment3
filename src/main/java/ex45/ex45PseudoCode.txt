@@ -1,0 +1,48 @@
+This program reads in an in input file
+Converts all instances of the word utilize to use
+Prompts the user for the name of the output file
+And generates that output file
+
+function readFile(File)
+{
+    Creates an empty string
+    Creates a scanner that reads the File
+
+    While there is still lines to be read in the file
+        Add the next line into the empty string
+        If there is a next line after the string is added
+            Add a newline character to the string
+
+    Return the string
+end
+}
+
+function replaceWord(A String with the words that need to be replaced, a String of the word that needs to be replaced, a String of the word that will replace it)
+{
+    Use the .replaceAll function of the String class with the input string and the find and replace words as parameters
+    Return the replaced string
+end
+}
+
+function createFile(String of the file path, String of what needs to be outputted)
+{
+    Create a file with the file path
+    Set the PrintStream to the new file instead of the console
+    And print the output to the file
+end
+}
+
+In Main
+{
+    Create a scanner for user input
+    Create a String for the root of the file
+    Create a new file to hold the input
+    And make two empty strings for the input and output
+
+    In a try catch loop
+        Set the input String equal to the realFile function with the input file as the parameter
+        Catch a fileNotFoundException
+    Set the output String equal to the replaceWord function with the input string, "utilize", and "use" as its parameters
+    Ask the user what they want the output file to be called
+    Add that user response to the file root and pass that along with the output string to createFile
+}

@@ -3,7 +3,6 @@
  *  Copyright 2021 Eric Gass
  */
 
-
 package ex46;
 
 import java.io.File;
@@ -48,23 +47,6 @@ public class App
             input += " ";
         }
         return input;
-    }
-    public static void main( String[] args ) throws FileNotFoundException {
-        Scanner scan = new Scanner(System.in);
-        File file = new File("src/main/java/ex46/exercise46_input.txt");
-        String input = "";
-        try {
-            input = readFile(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<Word> words = new ArrayList<Word>();
-        words = wordParse(input.split(" "));
-
-        words = wordSort(words);
-
-        printWords(words);
     }
 
     public static void printWords(List<Word> words)
@@ -130,5 +112,22 @@ public class App
             }
         }
         return words;
+    }
+    public static void main( String[] args ) throws FileNotFoundException {
+        Scanner scan = new Scanner(System.in);
+        File file = new File("src/main/java/ex46/exercise46_input.txt");
+        String input = "";
+        try {
+            input = readFile(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        List<Word> words = new ArrayList<Word>();
+        words = wordParse(input.split(" "));
+
+        words = wordSort(words);
+
+        printWords(words);
     }
 }

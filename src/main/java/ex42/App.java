@@ -5,7 +5,6 @@
 
 package ex42;
 import java.io.*;
-import java.nio.file.Path;
 import java.util.*;
 
 class Employee
@@ -82,7 +81,6 @@ public class App
 
         for(int i = 0; i < input.size();i++)
         {
-            Employee temp = new Employee();
             employees.add(parseData(input.get(i)));
         }
         System.out.println("Last      First     Salary\n--------------------------");

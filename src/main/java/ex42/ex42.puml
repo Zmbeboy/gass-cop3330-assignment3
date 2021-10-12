@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App{
+parseData(String data)
+readFile(File file)
+main()
+}
+
+class Employee{
+String FirstName
+String LastName
+Int Salary
+printEmployees()
+}
+
+App -- Employee: > uses
+@enduml

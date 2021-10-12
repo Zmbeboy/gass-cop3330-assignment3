@@ -1,0 +1,93 @@
+This function reads an input file
+Stores the words in the file along with how many of each
+Sort them based on frequency fo each word
+And format them into a table
+
+In the Word class
+{
+    A String that holds the word
+    An Integer that holds the quantity of the words
+
+    Both variables have their own get and set functions
+}
+
+In the App Class
+{
+    function readFile(File)
+    {
+        Creates an empty string
+        Creates a scanner that reads the File
+
+        While there is still lines to be read in the file
+            Add the next line into the empty string
+            Add a space after each line
+
+        Return the string
+    end
+    }
+
+    function printWords(A list of word objects)
+    {
+        For the amount of word objects
+            Print out the word
+            For the quantity of that word
+                Print an asterisk representing the word
+            Print a newline
+    end
+    }
+
+    function wordSort(A list of unsorted word objects)
+    {
+        Create a list of word objects
+        Create two integers representing the index of the highest quantity and the highest quantity
+
+        While there is words in the unsorted word list
+            For each word in the unsorted word list
+                If its the first word checked
+                    Set the highest index and quantity to this word objects values
+                Else if the quantity of the word is higher than the highest quantity so far
+                    Set the new highest index and quantity to the new Words values
+            Add the highest quantity word to the new array
+            And remove it from the old array
+            Repeat until every word is added into the new array in the correct order
+        Return the sorted word array
+    end
+    }
+
+    function wordParse(An array of strings each containing a single word)
+    {
+        Create a List of word objects
+        Create a boolean representing if the current word is in the List yet
+
+        For the amount of Strings in the array
+            Set the boolean to false
+            For each word inside the list of word objects
+                If the String is equal to the word value of the Word
+                    Set the boolean to true
+                    And increase the quantity of that word object
+            If the word is not found in the List of Words
+                Create a new word
+                Set the Words word to the input string
+                And the quantity to 1
+                Add that word to the List of Words
+        Return the List of words
+    end
+    }
+
+    In main
+    {
+        Create a scanner to get user input
+        Create a file at the input files location
+        Create an empty input string
+
+        In a try catch loop
+            Set the empty string to the readFile function with file as its parameter
+            Catch a file not found exception
+
+        Create a List of Word objects
+        Set that list equal to the wordParse function with the input string split into an array at each space
+        Pass that list into the wordSort function
+
+        And pass the list into the printWords function to see the result
+    }
+}

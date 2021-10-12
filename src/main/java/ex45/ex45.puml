@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App{
+readFile(File file)
+replaceWord(String input, String find, String replace)
+createFile(String fileName, String output)
+main()
+}
+
+@enduml

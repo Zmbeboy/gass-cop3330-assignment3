@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App {
+readFile(File file)
+sortArrayList(List<String> names)
+printToFile(List<String> sortedNames)
+main()
+}
+
+
+@enduml

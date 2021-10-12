@@ -1,0 +1,54 @@
+This program will read input in from a json file
+Store the input as products in a list
+And uses the list as a database that the user can read information from
+
+In the Product class
+{
+    A String name variable
+    A Double price variable
+    A integer quantity variable
+
+    Each of these variables has both a set and get function
+}
+
+In the Data Class
+{
+    Stores a list of Products
+    The list has its own set and get functions
+}
+
+In the App Class
+{
+    function objectFound(String containing the search term, and a Data Object)
+    {
+        For the amount of products in the Data objects List of products
+            If the name of the the product is equal to the search term
+                Output the Products information
+                Return True
+        The outside of the for loop will only run if no Products match the search term
+        Print that the object was not found
+        Return false
+    end
+    }
+
+    In main
+    {
+        Create a scanner to read user input
+        Create a Gson object
+        Create an empty object
+
+        In a try catch loop
+            Create a JsonParser
+            Set the empty object equal to the JsonParsers.parse function of the input file
+            Typecast the object to a JsonObject
+            Use the .fromJson function from the Gson object to store the information in a Data object
+            The Data object's Product list will get filled out during this step
+
+            Create a boolean equal to false
+            While this boolean is false
+                Prompt for user input
+                Use the objectFound function to check if the user input is within the Data object
+                Set the boolean equal to the objectFound functions return value
+            Then use a catch to check for any IOexceptions
+    }
+}
